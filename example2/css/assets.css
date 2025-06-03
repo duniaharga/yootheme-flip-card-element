@@ -1,0 +1,69 @@
+ :root {
+    --card-perspective: 150rem;
+    --card-height: 40rem;
+    --card-max-width: 400px;
+    --card-margin: 2rem;
+    --card-box-shadow: none;
+    --card-background: none;
+  
+    --side-height: 20rem;
+    --side-border-radius: 15px;
+    --side-transition: all 0.8s ease;
+    --side-width: 80%;
+    --side-padding: 2rem;
+    --side-color: white;
+  
+    --front-bg-color: #0093E9;
+    --front-gradient: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  
+    --back-bg-color: #4158D0;
+    --back-gradient: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  }
+  
+  .card {
+    perspective: var(--card-perspective);
+    position: relative;
+    height: var(--card-height);
+    max-width: var(--card-max-width);
+    margin: var(--card-margin);
+    box-shadow: var(--card-box-shadow);
+    background: var(--card-background);
+  }
+  
+  .card-side {
+    height: var(--side-height);
+    border-radius: var(--side-border-radius);
+    transition: var(--side-transition);
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--side-width);
+    padding: var(--side-padding);
+    color: var(--side-color);
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+    background-color: var(--back-bg-color);
+    background-image: var(--back-gradient);
+  }
+  
+  .card-side.front {
+    background-color: var(--front-bg-color);
+    background-image: var(--front-gradient);
+  }
+  
+  .card:hover .card-side.front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card-side.back {
+    transform: rotateY(0deg);
+  }
+
+
+
+
+
+   
